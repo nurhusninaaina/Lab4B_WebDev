@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Details</title>
+    <title>Books JSON Display</title>
 </head>
 <body>
+    <h1>Books Information</h1>
+    <p>Open the console to view the book details.</p>
+
     <script>
-        const booksData = {
+        // JSON data representing the books collection
+        const books = {
             "Books": [
                 {
                     "title": "The Great Gatsby",
@@ -25,16 +28,16 @@
             ]
         };
 
-        // (a) Log the title of the first book
-        console.log("Title of the first book:", booksData.Books[0].title);
+        // (a) Title of the first book
+        console.log("Title of the first book:", books.Books[0].title);
 
-        // (b) Log the author of the second book
-        console.log("Author of the second book:", booksData.Books[1].author);
+        // (b) Author of the second book
+        console.log("Author of the second book:", books.Books[1].author);
 
-        // (c) Log the genres of all books
+        // (c) Genres of all books
         console.log("Genres of all books:");
-        booksData.Books.forEach(book => {
-            console.log(book.genres);
+        books.Books.forEach((book, index) => {
+            console.log(`Book ${index + 1}:`, book.genres.join(", "));
         });
     </script>
 </body>
